@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kenza Aaroui | Professional Links</title>
+
+<link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/eliza-os.svg">
+
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: "Poppins", sans-serif;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 5vh 5vw;
+    background: #000 url("bg.png?v=5") center center / cover no-repeat fixed;
+  }
+
+  h1 { font-size: 2em; margin-top: 20px; }
+  p { color: #ccc; margin: 10px 0 30px; }
+
+  .link {
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    gap: 12px; 
+    width: 90%; 
+    max-width: 380px;
+    margin: 12px 0; 
+    padding: 14px;
+    border-radius: 14px; 
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255,255,255,0.05); /* darker */
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 0 18px rgba(255,255,255,0.10);
+    transition: 0.3s;
+    cursor: pointer;
+  }
+
+  .icon {
+    width: 30px; 
+    height: 30px;
+    border-radius: 6px;
+  }
+
+  #email-widget {
+    width: 90%;
+    max-width: 380px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.05); /* darker */
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 12px;
+    padding: 15px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 18px rgba(255,255,255,0.12);
+    animation: slideDown 0.35s ease forwards;
+  }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .email-line {
+    font-size: 1.1em;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .copy-btn {
+    background: rgba(255,255,255,0.15);
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.25);
+    cursor: pointer;
+    color: white;
+    transition: 0.25s;
+    font-size: 1em;
+  }
+
+  .copy-btn:hover {
+    background: rgba(255,255,255,0.25);
+    transform: scale(1.06);
+  }
+
+  .close-small {
+    color: #bbb;
+    font-size: 0.9em;
+    cursor: pointer;
+  }
+
+  #copied-bubble {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2ecc71;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  /* Animated moving quote */
+  footer {
+    margin-top: auto;
+    padding: 30px 0;
+    font-size: 0.9em;
+    opacity: 0.9;
+    animation: moveQuote 6s linear infinite;
+    white-space: nowrap;
+  }
+
+  @keyframes moveQuote {
+    0% { transform: translateX(-20px); opacity: 0.6; }
+    50% { transform: translateX(20px); opacity: 1; }
+    100% { transform: translateX(-20px); opacity: 0.6; }
+  }
+</style>
+</head>
+<body>
+
+  <h1>Kenza Aaroui</h1>
+  <p>Professional Contact & Job Profile</p>
+
+  <!-- LinkedIn -->
+  <a class="link" href="https://www.linkedin.com/in/kenza-aaroui-4763a4214" target="_blank">
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg"
+         style="filter: invert(42%) sepia(96%) saturate(1500%) hue-rotate(175deg) brightness(95%) contrast(90%);">
+    LinkedIn Profile
+  </a>
+
+  <!-- CV Instant Download -->
+  <a class="link" 
+     href="/mnt/data/0eabf006-9c65-4b91-8878-238273670e6a-curriculum_vitae-cv11.resume (1).pdf.pdf"
+     download="CV_Kenza_Aaroui.pdf">
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/google-docs.svg">
+    Télécharger mon CV
+  </a>
+
+  <!-- Email Button -->
+  <div class="link" onclick="toggleEmailWidget()" id="email-btn">
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/maildotru.svg"
+         style="filter: invert(100%);">
+    Email Me
+  </div>
+
+  <div id="email-widget">
+    <div class="email-line">kenzaaaroui.job@gmail.com</div>
+    <button class="copy-btn" onclick="copyEmail()">Copy</button>
+    <div class="close-small" onclick="toggleEmailWidget()">Close</div>
+  </div>
+
+  <div id="copied-bubble">Copied!</div>
+
+  <footer>« L'effort d'aujourd'hui, la réussite de demain. »</footer>
+
+<script>
+function toggleEmailWidget() {
+  const box = document.getElementById("email-widget");
+  box.style.display = (box.style.display === "flex") ? "none" : "flex";
+}
+
+function copyEmail() {
+  navigator.clipboard.writeText("kenzaaaroui.job@gmail.com");
+
+  const bubble = document.getElementById("copied-bubble");
+  bubble.style.opacity = 1;
+
+  setTimeout(() => {
+    bubble.style.opacity = 0;
+  }, 1500);
+}
+</script>
+
+</body>
+</html>
