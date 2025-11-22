@@ -25,27 +25,32 @@
   p { color: #ccc; margin: 10px 0 30px; }
 
   .link {
-    display: flex; 
-    align-items: center; 
+    display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 12px; 
-    width: 90%; 
+    gap: 12px;
+    width: 90%;
     max-width: 380px;
-    margin: 12px 0; 
+    margin: 12px 0;
     padding: 14px;
-    border-radius: 14px; 
+    border-radius: 14px;
     text-decoration: none;
     color: #fff;
-    background: rgba(255,255,255,0.05); /* darker */
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255,255,255,0.15);
-    box-shadow: 0 0 18px rgba(255,255,255,0.10);
+    background: rgba(20,20,20,0.45);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.10);
+    box-shadow: 0 0 18px rgba(0,0,0,0.5);
     transition: 0.3s;
     cursor: pointer;
   }
 
+  .link:hover {
+    background: rgba(40,40,40,0.55);
+    transform: scale(1.03);
+  }
+
   .icon {
-    width: 30px; 
+    width: 30px;
     height: 30px;
     border-radius: 6px;
   }
@@ -57,12 +62,12 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    background: rgba(255,255,255,0.05); /* darker */
+    background: rgba(20,20,20,0.45);
     border: 1px solid rgba(255,255,255,0.18);
     border-radius: 12px;
     padding: 15px;
     backdrop-filter: blur(15px);
-    box-shadow: 0 0 18px rgba(255,255,255,0.12);
+    box-shadow: 0 0 18px rgba(0,0,0,0.4);
     animation: slideDown 0.35s ease forwards;
   }
 
@@ -78,7 +83,7 @@
   }
 
   .copy-btn {
-    background: rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.20);
     padding: 10px 20px;
     border-radius: 10px;
     border: 1px solid rgba(255,255,255,0.25);
@@ -89,7 +94,7 @@
   }
 
   .copy-btn:hover {
-    background: rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.32);
     transform: scale(1.06);
   }
 
@@ -113,21 +118,21 @@
     transition: opacity 0.3s ease;
   }
 
-  /* Animated moving quote */
+  /* MOVING FOOTER ANIMATION */
   footer {
     margin-top: auto;
     padding: 30px 0;
     font-size: 0.9em;
-    opacity: 0.9;
-    animation: moveQuote 6s linear infinite;
-    white-space: nowrap;
+    opacity: 0.85;
+    animation: floatFooter 6s ease-in-out infinite;
   }
 
-  @keyframes moveQuote {
-    0% { transform: translateX(-20px); opacity: 0.6; }
-    50% { transform: translateX(20px); opacity: 1; }
-    100% { transform: translateX(-20px); opacity: 0.6; }
+  @keyframes floatFooter {
+    0%   { transform: translateX(0); opacity: 0.7; }
+    50%  { transform: translateX(10px); opacity: 1; }
+    100% { transform: translateX(0); opacity: 0.7; }
   }
+
 </style>
 </head>
 <body>
@@ -136,21 +141,21 @@
   <p>Professional Contact & Job Profile</p>
 
   <!-- LinkedIn -->
-  <a class="link" href="https://www.linkedin.com/in/kenza-aaroui-4763a4214" target="_blank">
+  <a class="link" 
+     href="https://www.linkedin.com/in/kenza-aaroui-4763a4214?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+     target="_blank">
     <img class="icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg"
          style="filter: invert(42%) sepia(96%) saturate(1500%) hue-rotate(175deg) brightness(95%) contrast(90%);">
     LinkedIn Profile
   </a>
 
-  <!-- CV Instant Download -->
-  <a class="link" 
-     href="/mnt/data/0eabf006-9c65-4b91-8878-238273670e6a-curriculum_vitae-cv11.resume (1).pdf.pdf"
-     download="CV_Kenza_Aaroui.pdf">
+  <!-- CV Download -->
+  <a class="link" href="/mnt/data/cv.pdf" download>
     <img class="icon" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/google-docs.svg">
     Télécharger mon CV
   </a>
 
-  <!-- Email Button -->
+ <!-- Email Button -->
   <div class="link" onclick="toggleEmailWidget()" id="email-btn">
     <img class="icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/maildotru.svg"
          style="filter: invert(100%);">
