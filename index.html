@@ -27,34 +27,39 @@
     color: #fff;
   }
 
-  /* Your black subtitle */
+  /* Subtitle in pure black, clean */
   p { 
-    color: #000;         
-    margin: 10px 0 30px; 
+    color: #000;
+    margin: 10px 0 30px;
     font-weight: 600;
-    background: rgba(255,255,255,0.6);
-    padding: 5px 12px;
-    border-radius: 6px;
   }
 
+  /* DARKER PROFESSIONAL BARS */
   .link {
-    display: flex; 
-    align-items: center; 
+    display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 12px; 
-    width: 90%; 
+    gap: 12px;
+    width: 90%;
     max-width: 380px;
-    margin: 12px 0; 
+    margin: 12px 0;
     padding: 14px;
-    border-radius: 14px; 
+    border-radius: 14px;
     text-decoration: none;
     color: #fff;
-    background: rgba(255,255,255,0.08);
+
+    background: rgba(0,0,0,0.55);
     backdrop-filter: blur(15px);
-    border: 1px solid rgba(255,255,255,0.20);
-    box-shadow: 0 0 18px rgba(255,255,255,0.25);
+    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 0 20px rgba(0,0,0,0.45);
+
     transition: 0.3s;
     cursor: pointer;
+  }
+
+  .link:hover {
+    background: rgba(0,0,0,0.70);
+    transform: scale(1.03);
   }
 
   .icon {
@@ -70,12 +75,12 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    background: rgba(255,255,255,0.08);
+    background: rgba(0,0,0,0.55);
     border: 1px solid rgba(255,255,255,0.18);
     border-radius: 12px;
     padding: 15px;
     backdrop-filter: blur(15px);
-    box-shadow: 0 0 18px rgba(255,255,255,0.15);
+    box-shadow: 0 0 18px rgba(0,0,0,0.4);
     animation: slideDown 0.35s ease forwards;
   }
 
@@ -126,6 +131,7 @@
     transition: opacity 0.3s ease;
   }
 
+  /* Animated footer quote */
   footer {
     margin-top: auto;
     padding: 30px 0;
@@ -160,7 +166,7 @@
   </a>
 
  <!-- Email Button -->
-  <div class="link" onclick="toggleEmailWidget()" id="email-btn">
+  <div class="link" onclick="toggleEmailWidget()">
     <img class="icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/maildotru.svg"
          style="filter: invert(100%);">
     Email Me
